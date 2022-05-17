@@ -21,8 +21,9 @@ export default function SelectMovieScreen() {
       <Movie>
         {(movieList ?
           movieList.map(movie =>
-            <Link to={'/'} key={movie.id}>
-              <div className='border'>
+            <Link to={`/SelectTimeScreen/${movie.id}`} key={movie.id}>
+              <div className='border'
+                onClick={() => localStorage.setItem('id', movie.id)}>
                 <div className='movie'>
                   <img src={`${movie.posterURL}`} alt={'poster'} />
                 </div>
