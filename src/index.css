@@ -2,9 +2,11 @@
   margin: 0;
   padding: 0;
 }
-body{
+
+/* body{
  background-color: #E5E5E5;
 }
+
 .loading {
   animation: is-rotating 1s infinite;
   width: 50px;
@@ -19,4 +21,16 @@ body{
   to {
     transform: rotate(1turn);
   }
+} */
+
+:root {
+  --fonte-primaria: 'Inter', sans-serif;  
+  --fonte-secundaria: 'DM Serif Display', serif;
+  --cor-primaria: #0062E3;
+  --cor-secundaria: #FFF;
+  --cor-terciaria: #FF4791;
+}
+
+body{
+  background-color: #0062E3;
 }

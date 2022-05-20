@@ -11,16 +11,31 @@ export default function SelectTimeScreen() {
   const [sessionList, setSessionList] = useState();
 
   useEffect(() => {
-    const promise = axios.get(URL)
-    promise.then(response => setSessionList(response.data))
-    console.log(sessionList)
+    axios.get(URL)
+      .then(response => setSessionList(response.data))
+
   }, [URL])
 
   return (
     <>
       <Header />
       <Horarios>
-        <h1>{localStorage.getItem('id')}</h1>
+        {
+          sessionList ?
+            sessionList.days.map((session) =>
+              <div>
+                <h1>
+                  {session.weekday}
+                </h1>
+                <h2>
+                  {session.date}
+                </h2>
+              </div>
+            )
+            :
+            <div className='loading' />
+        }
+
       </Horarios>
     </>
   )
